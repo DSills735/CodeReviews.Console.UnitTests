@@ -18,6 +18,7 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.2" />
     <PackageReference Include="Spectre.Console" Version="0.54.0" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="3.53.3" />
   </ItemGroup>
 	<ItemGroup>
 		<InternalsVisibleTo Include="CodingTracker.Testing"></InternalsVisibleTo>
