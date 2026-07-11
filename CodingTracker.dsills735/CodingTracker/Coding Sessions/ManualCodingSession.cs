@@ -1,6 +1,7 @@
-using Microsoft.Extensions.Configuration;
 using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
 using System.Globalization;
+
 
 public class ManualCodingSession
 {
@@ -15,11 +16,14 @@ public class ManualCodingSession
         string startTime = Console.ReadLine()!;
         bool valid = false; 
 
-        while (!DateTime.TryParseExact(startTime, "MM/dd/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out start))
+
+
+        while (!CodingTracker.Coding_Sessions.Validation.TimeInputValidation(startTime))
         {
             Console.WriteLine("Invalid format. Please enter the start Date and Time in the format (MM/DD/YYYY HH:MM)");
             startTime = Console.ReadLine()!;
         }
+
         Console.WriteLine();
         Console.WriteLine("Enter the end Date and Time (24 Hour). (MM/DD/YYYY HH:MM)");
         string endTime = Console.ReadLine()!;
