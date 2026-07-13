@@ -1,4 +1,6 @@
-﻿internal class UnitTests { 
+﻿using CodingTracker.Coding_Sessions;
+
+internal class UnitTests { 
     [TestCase("2026-05-26 10:00:00", "2026-05-26 13:00:00", 3, 0)]
     [TestCase("2026-05-26 10:00:00", "2026-05-26 10:45:00", 0, 45)]
     [TestCase("2026-05-26 22:00:00", "2026-05-27 02:00:00", 4, 0)]
@@ -34,6 +36,23 @@
     {
         TimeSpan duration = new TimeSpan(hours, minutes, seconds);
         string result = CalculateDuration.TimeFormatter(duration);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [TestCase("12/25/2025 14:30", true)]
+    [TestCase("01/01/2026 00:00", true)]
+    [TestCase("02/29/2024 23:59", true)]
+    [TestCase("07/04/2027 12:00", true)]
+    [TestCase("", false)]
+    [TestCase("bad input", false)]
+    [TestCase("2025-12-25 14:30", false)]
+    [TestCase("12/32/2025 10:00", false)]
+    [TestCase("13/01/2025 10:00", false)]
+    [TestCase("12/25/2025", false)]
+    public void TimeInputValidation_ReturnsExpectedResult(string time, bool expected)
+    {
+        bool result = Validation.TimeInputValidation(time);
+
         Assert.That(result, Is.EqualTo(expected));
     }
 
