@@ -33,14 +33,6 @@ public class ManualCodingSession
             endTime = Console.ReadLine()!;
         }
         DateTime.TryParseExact(endTime, "MM/dd/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out end);
-        /*
-        while (!DateTime.TryParseExact(endTime, "MM/dd/yyyy HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out end))
-        {
-            Console.WriteLine("Invalid format. Please enter the end Date and Time in the format (MM/DD/YYYY HH:MM)");
-            endTime = Console.ReadLine()!;
-            valid = false;
-           
-        }*/
 
         TimeSpan duration = CalculateDuration.CalculateTimeDuration(start, end);
 
