@@ -56,4 +56,18 @@ internal class UnitTests {
         Assert.That(result, Is.EqualTo(expected));
     }
 
+    [TestCase("Y", true)]
+    [TestCase("y", true)]
+    [TestCase("N", true)]
+    [TestCase("n", true)]
+    [TestCase("yes", false)]
+    [TestCase("no", false)]
+    [TestCase("1", false)]
+    [TestCase("", false)]
+    public void YorNValidation_ReturnsExpectedResult(string input, bool expected)
+    {
+        bool result = Validation.YorNValidation(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
 }
