@@ -62,6 +62,7 @@ public class Program
 
             default:
                 Console.WriteLine("Invalid input. Please take a close look at the options, and try again.");
+                MainMenu();
                 break;
         }
         
