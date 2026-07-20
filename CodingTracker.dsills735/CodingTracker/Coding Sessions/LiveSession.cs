@@ -69,11 +69,7 @@ internal class LiveSession
             Program.MainMenu();
 
         }
-        else
-        {
-            Console.WriteLine("Invalid Input, please try again.");
-            StartCodingSession();
-        }
+        
     }
 }
 
