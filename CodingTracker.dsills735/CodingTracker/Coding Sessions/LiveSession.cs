@@ -46,7 +46,7 @@ internal class LiveSession
                     userInput = Console.ReadLine()!;
                 }
             }
-            Console.WriteLine("Do you wish to return to the main menu? Press Y. If you wish to exit press any other key.");
+            Console.WriteLine("Do you wish to return to the main menu? Press Y. If you wish to exit press N.");
             userInput = Console.ReadLine()!;
 
             while(!CodingTracker.Coding_Sessions.Validation.YorNValidation(userInput))
